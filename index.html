@@ -58,6 +58,7 @@ h2.sec-title{font-size:38px;margin-bottom:18px}
 }
 .hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:6px;background:var(--tp-yellow)}
 .hero .eyebrow{font-size:14px}
+.hero-logo{height:84px;width:auto;margin-bottom:22px;filter:drop-shadow(0 4px 18px rgba(0,0,0,.35))}
 .hero h1{font-size:64px;margin:6px 0 8px}
 .hero .sub{font-size:24px;font-family:'Open Sans Condensed',sans-serif;font-weight:700;
   text-transform:uppercase;color:var(--tp-yellow);letter-spacing:1px}
@@ -91,6 +92,24 @@ ul.checks li::after{content:"";position:absolute;left:6px;top:8px;width:8px;heig
 .pull{border-left:4px solid var(--tp-yellow);padding:6px 0 6px 22px;margin:26px 0;
   font-family:'Open Sans Condensed',sans-serif;font-weight:700;text-transform:uppercase;
   font-size:21px;line-height:1.25}
+
+/* ===== Секции-этапы с фоновым триптихом из 3 фото ===== */
+.stage{position:relative;color:#fff;padding:88px 0;overflow:hidden}
+.stage-bg{position:absolute;inset:0;z-index:0;display:grid;grid-template-columns:repeat(3,1fr);gap:3px;background:var(--tp-yellow)}
+.stage-bg i{display:block;background-size:cover;background-position:center;background-color:#2b323c}
+.stage-ov{position:absolute;inset:0;z-index:1;
+  background:linear-gradient(180deg,rgba(31,36,44,.88) 0%,rgba(31,36,44,.78) 42%,rgba(31,36,44,.9) 100%)}
+.stage .wrap{position:relative;z-index:2}
+.stage .eyebrow{color:var(--tp-yellow)}
+.stage h2,.stage h3{color:#fff;text-shadow:0 2px 14px rgba(0,0,0,.35)}
+.stage .lead{color:#e6eaef}
+.stage .pull{color:#fff}
+.stage .note{color:#c3cad3}
+.stage ul.checks li{color:#eef1f4}
+@media (max-width:640px){
+  .stage-bg{grid-template-columns:1fr 1fr}
+  .stage-bg i:nth-child(3){display:none}
+}
 
 /* ===== «Почему выбирают» — тёмная лента ===== */
 .why ul.checks li::before{background:var(--tp-yellow)}
@@ -130,7 +149,7 @@ ul.checks li::after{content:"";position:absolute;left:6px;top:8px;width:8px;heig
 <!-- ============ HERO ============ -->
 <header class="hero">
   <div class="wrap">
-    <span class="eyebrow">TEAMPROF</span>
+    <img class="hero-logo" src="https://teamprof.ru/wp-content/uploads/2020/09/logo.png" alt="TEAMPROF" width="653" height="380">
     <h1>Разработка и <span class="pro">PRO</span>изводство</h1>
     <div class="sub">Создаём продукт. Контролируем результат.</div>
     <p class="tag">TEAMPROF — это не просто поставщик светотехнической продукции. Мы создаём собственные решения
@@ -148,7 +167,14 @@ ul.checks li::after{content:"";position:absolute;left:6px;top:8px;width:8px;heig
 </section>
 
 <!-- ============ РАЗРАБОТКА В РОССИИ ============ -->
-<section class="s-light">
+<!-- ФОТО ЭТАПА: замените 3 файла images/stage1-*.jpg на реальные снимки разработки/испытаний -->
+<section class="stage">
+  <div class="stage-bg">
+    <i style="background-image:url('images/stage1-1.jpg')"></i>
+    <i style="background-image:url('images/stage1-2.jpg')"></i>
+    <i style="background-image:url('images/stage1-3.jpg')"></i>
+  </div>
+  <div class="stage-ov"></div>
   <div class="wrap">
     <span class="eyebrow">Этап 01</span>
     <h2 class="sec-title">Разработка начинается в России</h2>
@@ -169,7 +195,14 @@ ul.checks li::after{content:"";position:absolute;left:6px;top:8px;width:8px;heig
 </section>
 
 <!-- ============ ПРОИЗВОДСТВО ПОД КОНТРОЛЕМ ============ -->
-<section>
+<!-- ФОТО ЭТАПА: замените 3 файла images/stage2-*.jpg на реальные снимки производства -->
+<section class="stage">
+  <div class="stage-bg">
+    <i style="background-image:url('images/stage2-1.jpg')"></i>
+    <i style="background-image:url('images/stage2-2.jpg')"></i>
+    <i style="background-image:url('images/stage2-3.jpg')"></i>
+  </div>
+  <div class="stage-ov"></div>
   <div class="wrap">
     <span class="eyebrow">Этап 02</span>
     <h2 class="sec-title">Производство под контролем TEAMPROF</h2>
@@ -192,7 +225,14 @@ ul.checks li::after{content:"";position:absolute;left:6px;top:8px;width:8px;heig
 </section>
 
 <!-- ============ СБОРОЧНЫЕ ПЛОЩАДИ В РОССИИ ============ -->
-<section class="s-light">
+<!-- ФОТО ЭТАПА: замените 3 файла images/stage3-*.jpg на реальные снимки сборки/контроля -->
+<section class="stage">
+  <div class="stage-bg">
+    <i style="background-image:url('images/stage3-1.jpg')"></i>
+    <i style="background-image:url('images/stage3-2.jpg')"></i>
+    <i style="background-image:url('images/stage3-3.jpg')"></i>
+  </div>
+  <div class="stage-ov"></div>
   <div class="wrap">
     <span class="eyebrow">Этап 03</span>
     <h2 class="sec-title">Собственные сборочные площади в России</h2>
