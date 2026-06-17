@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Разработка и производство | TEAMPROF</title>
+<meta name="description" content="TEAMPROF — российская торговая марка профессиональной иллюминации. Собственная инженерная разработка, контрактное производство под контролем TEAMPROF, собственные сборочные площади в России, контроль качества на каждом этапе, официальные поставки и маркировка «Честный ЗНАК».">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Разработка и производство | TEAMPROF">
+<meta property="og:description" content="Создаём продукт. Контролируем результат. Разработка, контрактное производство под контролем TEAMPROF, сборка в России, контроль качества и официальные поставки.">
+<meta property="og:url" content="https://teamprof.ru/production/">
+
+<!-- Фирменные шрифты сайта -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@700&family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
+
+<style>
+/* ===== Фирменные токены TEAMPROF (сняты с teamprof.ru) ===== */
+:root{
+  --tp-yellow:#ffd54a;
+  --tp-dark:#363e4a;
+  --tp-dark-2:#2b323c;
+  --tp-ink:#1f242c;
+  --tp-light:#f4f5f7;
+  --tp-line:#e3e6ea;
+  --tp-text:#20262e;
+  --tp-muted:#5a626d;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Ubuntu',sans-serif;font-weight:500;
+  color:var(--tp-text);background:#fff;line-height:1.65;font-size:17px;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,h4{font-family:'Open Sans Condensed',sans-serif;font-weight:700;text-transform:uppercase;line-height:1.1;letter-spacing:.3px}
+.pro{color:var(--tp-yellow)}
+.wrap{max-width:1100px;margin:0 auto;padding:0 24px}
+
+/* ===== Секции ===== */
+section{padding:72px 0}
+.s-dark{background:var(--tp-dark);color:#fff}
+.s-dark h2,.s-dark h3{color:#fff}
+.s-light{background:var(--tp-light)}
+.eyebrow{display:inline-block;font-family:'Ubuntu',sans-serif;font-weight:700;text-transform:uppercase;
+  letter-spacing:2px;font-size:13px;color:var(--tp-yellow);margin-bottom:14px}
+.s-dark .eyebrow{color:var(--tp-yellow)}
+h2.sec-title{font-size:38px;margin-bottom:18px}
+.lead{font-size:19px;color:var(--tp-muted);max-width:820px}
+.s-dark .lead{color:#d6dbe2}
+.accent-bar{width:64px;height:5px;background:var(--tp-yellow);border-radius:3px;margin:22px 0}
+
+/* ===== HERO ===== */
+.hero{
+  background:linear-gradient(135deg,#2b323c 0%,#363e4a 60%,#434c59 100%);
+  color:#fff;text-align:center;padding:104px 0 92px;position:relative;overflow:hidden;
+}
+.hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:6px;background:var(--tp-yellow)}
+.hero .eyebrow{font-size:14px}
+.hero h1{font-size:64px;margin:6px 0 8px}
+.hero .sub{font-size:24px;font-family:'Open Sans Condensed',sans-serif;font-weight:700;
+  text-transform:uppercase;color:var(--tp-yellow);letter-spacing:1px}
+.hero p.tag{margin:26px auto 0;max-width:760px;color:#cfd5dd;font-size:18px}
+
+/* ===== Чек-листы ===== */
+ul.checks{list-style:none;margin:26px 0 0;display:grid;grid-template-columns:1fr 1fr;gap:12px 34px}
+ul.checks.one{grid-template-columns:1fr}
+ul.checks li{position:relative;padding-left:34px;font-size:16.5px}
+ul.checks li::before{content:"";position:absolute;left:0;top:3px;width:20px;height:20px;border-radius:50%;
+  background:var(--tp-yellow)}
+ul.checks li::after{content:"";position:absolute;left:6px;top:8px;width:8px;height:4px;
+  border-left:2px solid var(--tp-dark);border-bottom:2px solid var(--tp-dark);transform:rotate(-45deg)}
+
+/* ===== Карточки этапов качества ===== */
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:34px}
+.card{background:#fff;border:1px solid var(--tp-line);border-radius:14px;padding:26px 22px;
+  border-top:5px solid var(--tp-yellow);box-shadow:0 6px 24px rgba(31,36,44,.06)}
+.card .num{font-family:'Open Sans Condensed',sans-serif;font-weight:700;font-size:30px;color:var(--tp-yellow);line-height:1}
+.card h3{font-size:21px;margin:8px 0 12px}
+.card ul{list-style:none}
+.card ul li{position:relative;padding-left:18px;margin-bottom:7px;font-size:15px;color:var(--tp-muted)}
+.card ul li::before{content:"";position:absolute;left:0;top:9px;width:7px;height:7px;border-radius:50%;background:var(--tp-yellow)}
+
+/* ===== Блок «Честный ЗНАК» ===== */
+.znak{background:#fff;border:1px solid var(--tp-line);border-left:6px solid var(--tp-yellow);
+  border-radius:12px;padding:30px 32px;margin-top:30px}
+.znak h3{font-size:23px;margin-bottom:14px}
+
+/* ===== Цитаты / выделения ===== */
+.pull{border-left:4px solid var(--tp-yellow);padding:6px 0 6px 22px;margin:26px 0;
+  font-family:'Open Sans Condensed',sans-serif;font-weight:700;text-transform:uppercase;
+  font-size:21px;line-height:1.25}
+
+/* ===== «Почему выбирают» — тёмная лента ===== */
+.why ul.checks li::before{background:var(--tp-yellow)}
+.why ul.checks li::after{border-color:var(--tp-dark)}
+.why ul.checks li{color:#e7ebf0}
+
+/* ===== CTA ===== */
+.cta{background:var(--tp-yellow);color:var(--tp-dark);text-align:center;padding:64px 0}
+.cta h2{font-size:42px;margin-bottom:10px}
+.cta .slogan{font-size:22px;font-family:'Open Sans Condensed',sans-serif;font-weight:700;text-transform:uppercase;margin-bottom:26px}
+.btn{display:inline-block;background:var(--tp-dark);color:#fff;text-decoration:none;
+  font-family:'Open Sans Condensed',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:1px;
+  font-size:18px;padding:16px 40px;border-radius:8px;transition:transform .15s ease,background .15s ease}
+.btn:hover{background:var(--tp-ink);transform:translateY(-2px)}
+
+.note{font-size:14px;color:var(--tp-muted);margin-top:18px}
+.s-dark .note{color:#aeb6c0}
+
+/* ===== Адаптив ===== */
+@media (max-width:860px){
+  .hero h1{font-size:44px}
+  .hero .sub{font-size:19px}
+  h2.sec-title{font-size:30px}
+  .cards{grid-template-columns:1fr 1fr}
+  ul.checks{grid-template-columns:1fr}
+  section{padding:54px 0}
+}
+@media (max-width:540px){
+  .hero h1{font-size:34px}
+  .cards{grid-template-columns:1fr}
+  .cta h2{font-size:30px}
+}
+</style>
+</head>
+<body>
+
+<!-- ============ HERO ============ -->
+<header class="hero">
+  <div class="wrap">
+    <span class="eyebrow">TEAMPROF</span>
+    <h1>Разработка и <span class="pro">PRO</span>изводство</h1>
+    <div class="sub">Создаём продукт. Контролируем результат.</div>
+    <p class="tag">TEAMPROF — это не просто поставщик светотехнической продукции. Мы создаём собственные решения
+      для декоративного, архитектурного и праздничного освещения, управляя всеми ключевыми этапами жизненного цикла
+      продукта: от инженерной разработки и испытаний до серийного производства, сборки, поставки и технической поддержки.</p>
+  </div>
+</header>
+
+<!-- ============ ВСТУПЛЕНИЕ ============ -->
+<section>
+  <div class="wrap">
+    <p class="lead">Наша задача — предложить рынку продукт, который отвечает современным требованиям качества,
+      безопасности и надёжности, а также обеспечивает предсказуемый результат для заказчика.</p>
+  </div>
+</section>
+
+<!-- ============ РАЗРАБОТКА В РОССИИ ============ -->
+<section class="s-light">
+  <div class="wrap">
+    <span class="eyebrow">Этап 01</span>
+    <h2 class="sec-title">Разработка начинается в России</h2>
+    <div class="accent-bar"></div>
+    <p class="lead">Каждый продукт TEAMPROF начинается с идеи, инженерной проработки и анализа потребностей рынка.
+      Мы не занимаемся простым копированием существующих решений: наша команда изучает опыт эксплуатации продукции,
+      анализирует запросы клиентов и разрабатывает решения, которые учитывают реальные условия работы на объектах.</p>
+    <ul class="checks">
+      <li>Разработка технического задания</li>
+      <li>Проектирование конструктивных решений</li>
+      <li>Подбор материалов и комплектующих</li>
+      <li>Тестирование и испытания опытных образцов</li>
+      <li>Проверка надёжности и безопасности продукции</li>
+      <li>Доработка изделий по результатам испытаний</li>
+    </ul>
+    <p class="pull">Каждое решение проходит путь от инженерной идеи до готового продукта.</p>
+  </div>
+</section>
+
+<!-- ============ ПРОИЗВОДСТВО ПОД КОНТРОЛЕМ ============ -->
+<section>
+  <div class="wrap">
+    <span class="eyebrow">Этап 02</span>
+    <h2 class="sec-title">Производство под контролем TEAMPROF</h2>
+    <div class="accent-bar"></div>
+    <p class="lead">После завершения разработки производство размещается на проверенных производственных площадках,
+      прошедших аудит и подтвердивших соответствие нашим требованиям. Мы используем современную модель контрактного
+      производства, которая позволяет сочетать высокий уровень качества, гибкость и конкурентоспособную стоимость
+      продукции. При этом TEAMPROF сохраняет полный контроль над производственным процессом.</p>
+    <ul class="checks">
+      <li>Качество материалов и комплектующих</li>
+      <li>Соблюдение технических требований</li>
+      <li>Производственные процессы</li>
+      <li>Качество сборки</li>
+      <li>Качество упаковки</li>
+      <li>Соответствие продукции утверждённым характеристикам</li>
+    </ul>
+    <p class="note">Мы выбираем не самые дешёвые решения, а наиболее надёжные и прогнозируемые с точки зрения
+      качества и срока службы продукции.</p>
+  </div>
+</section>
+
+<!-- ============ СБОРОЧНЫЕ ПЛОЩАДИ В РОССИИ ============ -->
+<section class="s-light">
+  <div class="wrap">
+    <span class="eyebrow">Этап 03</span>
+    <h2 class="sec-title">Собственные сборочные площади в России</h2>
+    <div class="accent-bar"></div>
+    <p class="lead">TEAMPROF располагает собственными производственно-сборочными площадями на территории
+      Российской Федерации. Это позволяет нам участвовать в создании продукта не только на этапе разработки,
+      но и непосредственно в процессе подготовки продукции к поставке клиенту.</p>
+    <ul class="checks">
+      <li>Входной контроль комплектующих</li>
+      <li>Сборка готовых изделий</li>
+      <li>Комплектация заказов</li>
+      <li>Тестирование продукции</li>
+      <li>Контроль качества перед отгрузкой</li>
+      <li>Маркировка продукции</li>
+      <li>Адаптация изделий под требования конкретных проектов</li>
+    </ul>
+    <p class="pull">Собственные сборочные мощности позволяют оперативно реагировать на потребности рынка,
+      сокращать сроки поставки и обеспечивать дополнительный контроль качества на финальном этапе.</p>
+  </div>
+</section>
+
+<!-- ============ КОНТРОЛЬ КАЧЕСТВА — 4 ЭТАПА ============ -->
+<section>
+  <div class="wrap">
+    <span class="eyebrow">Система качества</span>
+    <h2 class="sec-title">Контроль качества на каждом этапе</h2>
+    <div class="accent-bar"></div>
+    <p class="lead">Качество определяется не только производством. Оно начинается с инженерной идеи, продолжается
+      в процессе изготовления и подтверждается в эксплуатации. Поэтому система контроля TEAMPROF охватывает
+      весь жизненный цикл продукта.</p>
+    <div class="cards">
+      <div class="card">
+        <div class="num">01</div>
+        <h3>Разработка</h3>
+        <ul><li>Проектирование</li><li>Испытания</li><li>Тестирование образцов</li></ul>
+      </div>
+      <div class="card">
+        <div class="num">02</div>
+        <h3>Производство</h3>
+        <ul><li>Контроль материалов</li><li>Контроль комплектующих</li><li>Соблюдение технологий</li></ul>
+      </div>
+      <div class="card">
+        <div class="num">03</div>
+        <h3>Сборка</h3>
+        <ul><li>Проверка качества изделий</li><li>Тестирование продукции</li><li>Контроль комплектности</li></ul>
+      </div>
+      <div class="card">
+        <div class="num">04</div>
+        <h3>Эксплуатация</h3>
+        <ul><li>Сбор обратной связи</li><li>Анализ результатов</li><li>Совершенствование конструкций</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ОФИЦИАЛЬНЫЕ ПОСТАВКИ + ЧЕСТНЫЙ ЗНАК ============ -->
+<section class="s-light">
+  <div class="wrap">
+    <span class="eyebrow">Прозрачность</span>
+    <h2 class="sec-title">Официальные поставки и полная прозрачность</h2>
+    <div class="accent-bar"></div>
+    <p class="lead">Вся продукция TEAMPROF поставляется исключительно по официальным каналам. Мы обеспечиваем:</p>
+    <ul class="checks">
+      <li>Официальное таможенное оформление</li>
+      <li>Полную прослеживаемость происхождения продукции</li>
+      <li>Сертификацию и подтверждение соответствия требованиям ЕАЭС</li>
+      <li>Оформление разрешительной документации</li>
+      <li>Маркировку продукции по требованиям законодательства</li>
+      <li>Прозрачную логистику от производства до заказчика</li>
+    </ul>
+
+    <div class="znak">
+      <h3>Маркировка и система «Честный ЗНАК»</h3>
+      <p>TEAMPROF осуществляет маркировку товаров в системе «Честный ЗНАК» в соответствии с требованиями
+        действующего законодательства Российской Федерации. Для наших клиентов это означает:</p>
+      <ul class="checks">
+        <li>Подтверждённое происхождение продукции</li>
+        <li>Прозрачную историю движения товара</li>
+        <li>Легальность ввоза и реализации продукции на территории РФ</li>
+        <li>Соответствие требованиям государственных и корпоративных заказчиков</li>
+        <li>Снижение рисков при проверках и аудите</li>
+        <li>Применение на объектах с повышенными требованиями к документообороту</li>
+      </ul>
+    </div>
+
+    <p class="pull">TEAMPROF — прозрачные поставки, подтверждённое качество и ответственность
+      на каждом этапе создания продукта.</p>
+  </div>
+</section>
+
+<!-- ============ НАШЕ БУДУЩЕЕ ============ -->
+<section class="s-dark">
+  <div class="wrap">
+    <span class="eyebrow">Развитие</span>
+    <h2 class="sec-title">Наше будущее</h2>
+    <div class="accent-bar"></div>
+    <p class="lead">Сегодня TEAMPROF управляет процессом разработки, производства, сборки, поставки и контроля
+      качества продукции. Следующий этап развития компании — расширение собственного производственного присутствия
+      на территории Российской Федерации. Мы последовательно развиваем:</p>
+    <ul class="checks">
+      <li>Инженерный центр разработки</li>
+      <li>Сборочные мощности</li>
+      <li>Испытательную базу</li>
+      <li>Производственные технологии</li>
+      <li>Уровень локализации продукции</li>
+    </ul>
+    <p class="lead" style="margin-top:26px">Наша цель — создать полноценную экосистему разработки и производства
+      светотехнических решений в России, сохранив высокий уровень качества, гибкость производства и ответственность
+      перед клиентами. Мы не стремимся быть просто поставщиком — мы строим компанию, которая создаёт собственный
+      продукт, отвечает за его качество и развивается вместе со своими партнёрами.</p>
+  </div>
+</section>
+
+<!-- ============ ПОЧЕМУ ВЫБИРАЮТ ============ -->
+<section class="s-dark why" style="padding-top:0">
+  <div class="wrap">
+    <span class="eyebrow">Почему выбирают TEAMPROF</span>
+    <h2 class="sec-title">9 причин работать с нами</h2>
+    <div class="accent-bar"></div>
+    <ul class="checks">
+      <li>Собственная инженерная разработка</li>
+      <li>Контрактное производство под контролем TEAMPROF</li>
+      <li>Собственные сборочные площади в России</li>
+      <li>Контроль качества на всех этапах производства</li>
+      <li>Официальный импорт и прозрачная логистика</li>
+      <li>Сертификация в соответствии с требованиями ЕАЭС</li>
+      <li>Полная прослеживаемость происхождения продукции</li>
+      <li>Техническая поддержка и сопровождение проектов</li>
+      <li>Постоянное развитие и локализация производства</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ CTA / СЛОГАН ============ -->
+<section class="cta">
+  <div class="wrap">
+    <h2>Производство сегодня. <span style="color:#fff">Технологии завтра.</span></h2>
+    <div class="slogan">TEAMPROF — разработка, производство и ответственность за результат</div>
+    <a class="btn" href="/contacts/">Стать партнёром TEAMPROF</a>
+    <p class="note" style="margin-top:24px;color:var(--tp-dark);font-weight:700">Вместе в <span style="color:#fff">PRO</span>дуктивное будущее.</p>
+  </div>
+</section>
+
+</body>
+</html>
