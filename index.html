@@ -93,22 +93,26 @@ ul.checks li::after{content:"";position:absolute;left:6px;top:8px;width:8px;heig
   font-family:'Open Sans Condensed',sans-serif;font-weight:700;text-transform:uppercase;
   font-size:21px;line-height:1.25}
 
-/* ===== Секции-этапы с фоновым триптихом из 3 фото ===== */
-.stage{position:relative;color:#fff;padding:88px 0;overflow:hidden}
-.stage-bg{position:absolute;inset:0;z-index:0;display:grid;grid-template-columns:repeat(3,1fr);gap:3px;background:var(--tp-yellow)}
-.stage-bg i{display:block;background-size:cover;background-position:center;background-color:#2b323c}
-.stage-ov{position:absolute;inset:0;z-index:1;
-  background:linear-gradient(180deg,rgba(31,36,44,.88) 0%,rgba(31,36,44,.78) 42%,rgba(31,36,44,.9) 100%)}
-.stage .wrap{position:relative;z-index:2}
+/* ===== Секции-этапы: одно фото, встроенное в тёмную текстуру бренда ===== */
+.stage{position:relative;color:#fff;padding:88px 0;overflow:hidden;background:var(--tp-dark-2)}
+.stage-bg{position:absolute;inset:0;z-index:0;background-size:cover;background-position:center;background-color:var(--tp-dark-2)}
+/* виньетка: фото мягко растворяется в фирменный тёмный по краям (углы уже подразмыты в самом файле) */
+.stage-vig{position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:radial-gradient(120% 132% at 50% 42%,rgba(43,50,60,0) 36%,rgba(43,50,60,.62) 72%,var(--tp-dark-2) 100%)}
+/* затемнение под текст: сильнее слева (там текст) и снизу, фото просматривается справа */
+.stage-ov{position:absolute;inset:0;z-index:2;background:
+  linear-gradient(90deg,rgba(31,36,44,.93) 0%,rgba(31,36,44,.84) 30%,rgba(31,36,44,.62) 62%,rgba(31,36,44,.50) 100%),
+  linear-gradient(180deg,rgba(31,36,44,.40) 0%,rgba(31,36,44,.10) 28%,rgba(31,36,44,.58) 100%)}
+.stage .wrap{position:relative;z-index:3}
 .stage .eyebrow{color:var(--tp-yellow)}
-.stage h2,.stage h3{color:#fff;text-shadow:0 2px 14px rgba(0,0,0,.35)}
+.stage h2,.stage h3{color:#fff;text-shadow:0 2px 14px rgba(0,0,0,.45)}
 .stage .lead{color:#e6eaef}
 .stage .pull{color:#fff}
 .stage .note{color:#c3cad3}
 .stage ul.checks li{color:#eef1f4}
+.stage .lead,.stage ul.checks li,.stage .note{text-shadow:0 1px 8px rgba(0,0,0,.5)}
 @media (max-width:640px){
-  .stage-bg{grid-template-columns:1fr 1fr}
-  .stage-bg i:nth-child(3){display:none}
+  .stage-ov{background:linear-gradient(180deg,rgba(31,36,44,.82) 0%,rgba(31,36,44,.70) 40%,rgba(31,36,44,.9) 100%)}
 }
 
 /* ===== «Почему выбирают» — тёмная лента ===== */
@@ -167,13 +171,10 @@ ul.checks li::after{content:"";position:absolute;left:6px;top:8px;width:8px;heig
 </section>
 
 <!-- ============ РАЗРАБОТКА В РОССИИ ============ -->
-<!-- ФОТО ЭТАПА: замените 3 файла images/stage1-*.jpg на реальные снимки разработки/испытаний -->
+<!-- ФОТО ЭТАПА: одно фото images/stage1.jpg (разработка/испытания) -->
 <section class="stage">
-  <div class="stage-bg">
-    <i style="background-image:url('images/stage1-1.jpg')"></i>
-    <i style="background-image:url('images/stage1-2.jpg')"></i>
-    <i style="background-image:url('images/stage1-3.jpg')"></i>
-  </div>
+  <div class="stage-bg" style="background-image:url('images/stage1.jpg')"></div>
+  <div class="stage-vig"></div>
   <div class="stage-ov"></div>
   <div class="wrap">
     <span class="eyebrow">Этап 01</span>
@@ -195,13 +196,10 @@ ul.checks li::after{content:"";position:absolute;left:6px;top:8px;width:8px;heig
 </section>
 
 <!-- ============ ПРОИЗВОДСТВО ПОД КОНТРОЛЕМ ============ -->
-<!-- ФОТО ЭТАПА: замените 3 файла images/stage2-*.jpg на реальные снимки производства -->
+<!-- ФОТО ЭТАПА: одно фото images/stage2.jpg (производство/контроль) -->
 <section class="stage">
-  <div class="stage-bg">
-    <i style="background-image:url('images/stage2-1.jpg')"></i>
-    <i style="background-image:url('images/stage2-2.jpg')"></i>
-    <i style="background-image:url('images/stage2-3.jpg')"></i>
-  </div>
+  <div class="stage-bg" style="background-image:url('images/stage2.jpg')"></div>
+  <div class="stage-vig"></div>
   <div class="stage-ov"></div>
   <div class="wrap">
     <span class="eyebrow">Этап 02</span>
@@ -225,13 +223,10 @@ ul.checks li::after{content:"";position:absolute;left:6px;top:8px;width:8px;heig
 </section>
 
 <!-- ============ СБОРОЧНЫЕ ПЛОЩАДИ В РОССИИ ============ -->
-<!-- ФОТО ЭТАПА: замените 3 файла images/stage3-*.jpg на реальные снимки сборки/контроля -->
+<!-- ФОТО ЭТАПА: одно фото images/stage3.jpg (сборка/упаковка) -->
 <section class="stage">
-  <div class="stage-bg">
-    <i style="background-image:url('images/stage3-1.jpg')"></i>
-    <i style="background-image:url('images/stage3-2.jpg')"></i>
-    <i style="background-image:url('images/stage3-3.jpg')"></i>
-  </div>
+  <div class="stage-bg" style="background-image:url('images/stage3.jpg')"></div>
+  <div class="stage-vig"></div>
   <div class="stage-ov"></div>
   <div class="wrap">
     <span class="eyebrow">Этап 03</span>
