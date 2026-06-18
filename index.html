@@ -93,26 +93,35 @@ ul.checks li::after{content:"";position:absolute;left:6px;top:8px;width:8px;heig
   font-family:'Open Sans Condensed',sans-serif;font-weight:700;text-transform:uppercase;
   font-size:21px;line-height:1.25}
 
-/* ===== Секции-этапы: одно фото, встроенное в тёмную текстуру бренда ===== */
-.stage{position:relative;color:#fff;padding:88px 0;overflow:hidden;background:var(--tp-dark-2)}
-.stage-bg{position:absolute;inset:0;z-index:0;background-size:cover;background-position:center;background-color:var(--tp-dark-2)}
-/* виньетка: фото мягко растворяется в фирменный тёмный по краям (углы уже подразмыты в самом файле) */
-.stage-vig{position:absolute;inset:0;z-index:1;pointer-events:none;
-  background:radial-gradient(120% 132% at 50% 42%,rgba(43,50,60,0) 36%,rgba(43,50,60,.62) 72%,var(--tp-dark-2) 100%)}
-/* затемнение под текст: сильнее слева (там текст) и снизу, фото просматривается справа */
-.stage-ov{position:absolute;inset:0;z-index:2;background:
-  linear-gradient(90deg,rgba(31,36,44,.93) 0%,rgba(31,36,44,.84) 30%,rgba(31,36,44,.62) 62%,rgba(31,36,44,.50) 100%),
-  linear-gradient(180deg,rgba(31,36,44,.40) 0%,rgba(31,36,44,.10) 28%,rgba(31,36,44,.58) 100%)}
-.stage .wrap{position:relative;z-index:3}
+/* ===== Секции-этапы: текст слева, фото целиком справа ===== */
+.stage{position:relative;color:#fff;padding:76px 0;background:linear-gradient(180deg,#333c48 0%,#2b323c 100%)}
+.stage+.stage{box-shadow:inset 0 1px 0 rgba(255,255,255,.05)}
 .stage .eyebrow{color:var(--tp-yellow)}
-.stage h2,.stage h3{color:#fff;text-shadow:0 2px 14px rgba(0,0,0,.45)}
-.stage .lead{color:#e6eaef}
+.stage h2,.stage h3{color:#fff}
+.stage .lead{color:#dfe4ea}
 .stage .pull{color:#fff}
 .stage .note{color:#c3cad3}
 .stage ul.checks li{color:#eef1f4}
-.stage .lead,.stage ul.checks li,.stage .note{text-shadow:0 1px 8px rgba(0,0,0,.5)}
-@media (max-width:640px){
-  .stage-ov{background:linear-gradient(180deg,rgba(31,36,44,.82) 0%,rgba(31,36,44,.70) 40%,rgba(31,36,44,.9) 100%)}
+.stage-grid{display:grid;grid-template-columns:1.04fr .96fr;gap:52px;align-items:center}
+.stage-text ul.checks{grid-template-columns:1fr;gap:11px;margin-top:22px}
+.stage-text .pull,.stage-text .note{margin-bottom:0}
+/* фото целиком, в аккуратной «карточке» поверх тёмного фона */
+.stage-photo{margin:0;position:relative}
+.stage-photo img{display:block;width:100%;height:auto;border-radius:14px;
+  box-shadow:0 28px 64px rgba(0,0,0,.5),0 0 0 1px rgba(255,255,255,.08)}
+/* фирменная акцент-планка слева от фото */
+.stage-photo::before{content:"";position:absolute;left:-14px;top:28px;bottom:28px;width:4px;
+  border-radius:4px;background:var(--tp-yellow)}
+/* лёгкая глубина по самым краям — изображение не обрезается */
+.stage-photo::after{content:"";position:absolute;inset:0;border-radius:14px;pointer-events:none;
+  box-shadow:inset 0 0 55px rgba(16,20,26,.4)}
+@media (max-width:860px){
+  .stage-grid{grid-template-columns:1fr;gap:28px}
+  .stage-text ul.checks{grid-template-columns:1fr 1fr}
+  .stage-photo::before{display:none}
+}
+@media (max-width:540px){
+  .stage-text ul.checks{grid-template-columns:1fr}
 }
 
 /* ===== «Почему выбирают» — тёмная лента ===== */
@@ -173,79 +182,85 @@ ul.checks li::after{content:"";position:absolute;left:6px;top:8px;width:8px;heig
 <!-- ============ РАЗРАБОТКА В РОССИИ ============ -->
 <!-- ФОТО ЭТАПА: одно фото images/stage1.jpg (разработка/испытания) -->
 <section class="stage">
-  <div class="stage-bg" style="background-image:url('images/stage1.jpg')"></div>
-  <div class="stage-vig"></div>
-  <div class="stage-ov"></div>
-  <div class="wrap">
-    <span class="eyebrow">Этап 01</span>
-    <h2 class="sec-title">Разработка начинается в России</h2>
-    <div class="accent-bar"></div>
-    <p class="lead">Каждый продукт TEAMPROF начинается с идеи, инженерной проработки и анализа потребностей рынка.
-      Мы не занимаемся простым копированием существующих решений: наша команда изучает опыт эксплуатации продукции,
-      анализирует запросы клиентов и разрабатывает решения, которые учитывают реальные условия работы на объектах.</p>
-    <ul class="checks">
-      <li>Разработка технического задания</li>
-      <li>Проектирование конструктивных решений</li>
-      <li>Подбор материалов и комплектующих</li>
-      <li>Тестирование и испытания опытных образцов</li>
-      <li>Проверка надёжности и безопасности продукции</li>
-      <li>Доработка изделий по результатам испытаний</li>
-    </ul>
-    <p class="pull">Каждое решение проходит путь от инженерной идеи до готового продукта.</p>
+  <div class="wrap stage-grid">
+    <div class="stage-text">
+      <span class="eyebrow">Этап 01</span>
+      <h2 class="sec-title">Разработка начинается в России</h2>
+      <div class="accent-bar"></div>
+      <p class="lead">Каждый продукт TEAMPROF начинается с идеи, инженерной проработки и анализа потребностей рынка.
+        Мы не занимаемся простым копированием существующих решений: наша команда изучает опыт эксплуатации продукции,
+        анализирует запросы клиентов и разрабатывает решения, которые учитывают реальные условия работы на объектах.</p>
+      <ul class="checks">
+        <li>Разработка технического задания</li>
+        <li>Проектирование конструктивных решений</li>
+        <li>Подбор материалов и комплектующих</li>
+        <li>Тестирование и испытания опытных образцов</li>
+        <li>Проверка надёжности и безопасности продукции</li>
+        <li>Доработка изделий по результатам испытаний</li>
+      </ul>
+      <p class="pull">Каждое решение проходит путь от инженерной идеи до готового продукта.</p>
+    </div>
+    <figure class="stage-photo">
+      <img src="images/stage1.jpg" alt="TEAMPROF LAB — исследования и разработка" loading="lazy">
+    </figure>
   </div>
 </section>
 
 <!-- ============ ПРОИЗВОДСТВО ПОД КОНТРОЛЕМ ============ -->
 <!-- ФОТО ЭТАПА: одно фото images/stage2.jpg (производство/контроль) -->
 <section class="stage">
-  <div class="stage-bg" style="background-image:url('images/stage2.jpg')"></div>
-  <div class="stage-vig"></div>
-  <div class="stage-ov"></div>
-  <div class="wrap">
-    <span class="eyebrow">Этап 02</span>
-    <h2 class="sec-title">Производство под контролем TEAMPROF</h2>
-    <div class="accent-bar"></div>
-    <p class="lead">После завершения разработки производство размещается на проверенных производственных площадках,
-      прошедших аудит и подтвердивших соответствие нашим требованиям. Мы используем современную модель контрактного
-      производства, которая позволяет сочетать высокий уровень качества, гибкость и конкурентоспособную стоимость
-      продукции. При этом TEAMPROF сохраняет полный контроль над производственным процессом.</p>
-    <ul class="checks">
-      <li>Качество материалов и комплектующих</li>
-      <li>Соблюдение технических требований</li>
-      <li>Производственные процессы</li>
-      <li>Качество сборки</li>
-      <li>Качество упаковки</li>
-      <li>Соответствие продукции утверждённым характеристикам</li>
-    </ul>
-    <p class="note">Мы выбираем не самые дешёвые решения, а наиболее надёжные и прогнозируемые с точки зрения
-      качества и срока службы продукции.</p>
+  <div class="wrap stage-grid">
+    <div class="stage-text">
+      <span class="eyebrow">Этап 02</span>
+      <h2 class="sec-title">Производство под контролем TEAMPROF</h2>
+      <div class="accent-bar"></div>
+      <p class="lead">После завершения разработки производство размещается на проверенных производственных площадках,
+        прошедших аудит и подтвердивших соответствие нашим требованиям. Мы используем современную модель контрактного
+        производства, которая позволяет сочетать высокий уровень качества, гибкость и конкурентоспособную стоимость
+        продукции. При этом TEAMPROF сохраняет полный контроль над производственным процессом.</p>
+      <ul class="checks">
+        <li>Качество материалов и комплектующих</li>
+        <li>Соблюдение технических требований</li>
+        <li>Производственные процессы</li>
+        <li>Качество сборки</li>
+        <li>Качество упаковки</li>
+        <li>Соответствие продукции утверждённым характеристикам</li>
+      </ul>
+      <p class="note">Мы выбираем не самые дешёвые решения, а наиболее надёжные и прогнозируемые с точки зрения
+        качества и срока службы продукции.</p>
+    </div>
+    <figure class="stage-photo">
+      <img src="images/stage2.jpg" alt="Контроль производства TEAMPROF — оператор у станка" loading="lazy">
+    </figure>
   </div>
 </section>
 
 <!-- ============ СБОРОЧНЫЕ ПЛОЩАДИ В РОССИИ ============ -->
 <!-- ФОТО ЭТАПА: одно фото images/stage3.jpg (сборка/упаковка) -->
 <section class="stage">
-  <div class="stage-bg" style="background-image:url('images/stage3.jpg')"></div>
-  <div class="stage-vig"></div>
-  <div class="stage-ov"></div>
-  <div class="wrap">
-    <span class="eyebrow">Этап 03</span>
-    <h2 class="sec-title">Собственные сборочные площади в России</h2>
-    <div class="accent-bar"></div>
-    <p class="lead">TEAMPROF располагает собственными производственно-сборочными площадями на территории
-      Российской Федерации. Это позволяет нам участвовать в создании продукта не только на этапе разработки,
-      но и непосредственно в процессе подготовки продукции к поставке клиенту.</p>
-    <ul class="checks">
-      <li>Входной контроль комплектующих</li>
-      <li>Сборка готовых изделий</li>
-      <li>Комплектация заказов</li>
-      <li>Тестирование продукции</li>
-      <li>Контроль качества перед отгрузкой</li>
-      <li>Маркировка продукции</li>
-      <li>Адаптация изделий под требования конкретных проектов</li>
-    </ul>
-    <p class="pull">Собственные сборочные мощности позволяют оперативно реагировать на потребности рынка,
-      сокращать сроки поставки и обеспечивать дополнительный контроль качества на финальном этапе.</p>
+  <div class="wrap stage-grid">
+    <div class="stage-text">
+      <span class="eyebrow">Этап 03</span>
+      <h2 class="sec-title">Собственные сборочные площади в России</h2>
+      <div class="accent-bar"></div>
+      <p class="lead">TEAMPROF располагает собственными производственно-сборочными площадями на территории
+        Российской Федерации. Это позволяет нам участвовать в создании продукта не только на этапе разработки,
+        но и непосредственно в процессе подготовки продукции к поставке клиенту.</p>
+      <ul class="checks">
+        <li>Входной контроль комплектующих</li>
+        <li>Сборка готовых изделий</li>
+        <li>Комплектация заказов</li>
+        <li>Тестирование продукции</li>
+        <li>Контроль качества перед отгрузкой</li>
+        <li>Маркировка продукции</li>
+        <li>Адаптация изделий под требования конкретных проектов</li>
+      </ul>
+      <p class="pull">Собственные сборочные мощности позволяют оперативно реагировать на потребности рынка,
+        сокращать сроки поставки и обеспечивать дополнительный контроль качества на финальном этапе.</p>
+    </div>
+    <figure class="stage-photo">
+      <img src="images/stage3.jpg" alt="Сборочный цех и склад готовой продукции TEAMPROF" loading="lazy">
+    </figure>
   </div>
 </section>
 
