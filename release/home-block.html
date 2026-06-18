@@ -1,0 +1,45 @@
+<!--
+  ПРОМО-БОКС «ПРОИЗВОДСТВО» для главной страницы teamprof.ru
+  ───────────────────────────────────────────────────────────
+  Куда вставить: в ряд иконок-боксов на главной (Elementor),
+  СТРОГО МЕЖДУ боксом «О НАС» (ссылка /about/) и боксом «НАШИ КЛИЕНТЫ» (ссылка /client/).
+
+  Текущий порядок боксов в этом ряду:
+     [Магазин /shop/] → [О нас /about/] → [Наши клиенты /client/] → [Команда /team/]
+  Нужный порядок:
+     [Магазин /shop/] → [О нас /about/] → [►ПРОИЗВОДСТВО /production/] → [Наши клиенты /client/] → [Команда /team/]
+
+  Как вставить в Elementor:
+     1. Открыть главную в редакторе Elementor.
+     2. Скопировать существующий виджет image-box «О нас» (правый клик → «Копировать»).
+     3. Вставить его сразу ПОСЛЕ «О нас» (→ «Вставить»). Появится дубль.
+     4. В дубле заменить: ссылку → /production/, заголовок и описание (см. ниже),
+        иконку → новая иконка «производство» (см. примечание).
+     Либо вставить готовую разметку ниже как HTML-виджет в ту же позицию.
+
+  ВАЖНО про иконку: остальные боксы используют монохромные иконки 150×150 px
+  из /wp-content/uploads/2020/06/ (ик2, ик3, ик4...). Нужно подготовить такую же
+  иконку «производство/шестерёнка» в едином стиле и заменить src ниже.
+  Временно подставлена иконка ик4 как плейсхолдер.
+-->
+
+<div class="elementor-element elementor-widget__width-inherit elementor-position-top elementor-widget elementor-widget-image-box" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInDown&quot;,&quot;_animation_delay&quot;:450}" data-widget_type="image-box.default">
+  <div class="elementor-widget-container">
+    <div class="elementor-image-box-wrapper">
+      <figure class="elementor-image-box-img">
+        <a href="https://teamprof.ru/production/" tabindex="-1">
+          <!-- TODO: заменить на фирменную иконку «производство» 150×150 px в стиле ик2/ик3/ик4 -->
+          <img loading="lazy" decoding="async" width="150" height="150"
+               src="https://teamprof.ru/wp-content/uploads/2020/06/ик4-150x150.png"
+               class="elementor-animation-grow attachment-thumbnail size-thumbnail" alt="Производство TEAMPROF" />
+        </a>
+      </figure>
+      <div class="elementor-image-box-content">
+        <h4 class="elementor-image-box-title">
+          <a href="https://teamprof.ru/production/">СОЗДАЁМ ПРОДУКТ, А НЕ ПЕРЕПРОДАЁМ</a>
+        </h4>
+        <p class="elementor-image-box-description">УЗНАТЬ О ПРОИЗВОДСТВЕ TEAMPROF</p>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TEAMPROF · Раздел «Производство» — пакет для внедрения</title>
+<meta name="robots" content="noindex">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@700&family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--y:#ffd54a;--d:#363e4a;--d2:#2b323c;--ink:#1f242c;--line:#e3e6ea;--muted:#5a626d}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Ubuntu',sans-serif;font-weight:500;color:#2b2b2b;background:#f7f7f7;line-height:1.65;font-size:16px}
+h1,h2,h3{font-family:'Open Sans Condensed',sans-serif;font-weight:700;text-transform:uppercase;line-height:1.12;letter-spacing:.3px}
+a{color:#1f6fb2}
+.wrap{max-width:880px;margin:0 auto;padding:0 22px}
+header{background:linear-gradient(135deg,#2b323c,#363e4a 65%,#434c59);color:#fff;padding:48px 0 42px;border-bottom:5px solid var(--y)}
+header .eyebrow{color:var(--y);font-weight:700;text-transform:uppercase;letter-spacing:2px;font-size:13px;margin-bottom:10px}
+header h1{font-size:40px;color:#fff}
+header p{color:#cfd5dd;margin-top:12px;max-width:680px}
+.btns{display:flex;flex-wrap:wrap;gap:14px;margin-top:26px}
+.btn{display:inline-block;text-decoration:none;font-family:'Open Sans Condensed',sans-serif;font-weight:700;
+  text-transform:uppercase;letter-spacing:1px;font-size:16px;padding:14px 26px;border-radius:8px;transition:.15s}
+.btn-y{background:var(--y);color:var(--d)}
+.btn-y:hover{background:#ffdf6e}
+.btn-o{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.5)}
+.btn-o:hover{border-color:#fff}
+section{padding:38px 0}
+h2.s{font-size:26px;color:var(--d);margin-bottom:6px}
+.bar{width:54px;height:4px;background:var(--y);border-radius:3px;margin:10px 0 22px}
+.files{list-style:none;display:grid;gap:10px}
+.files li{background:#fff;border:1px solid var(--line);border-left:4px solid var(--y);border-radius:8px;padding:12px 16px}
+.files a{font-weight:700;text-decoration:none}
+.files small{color:var(--muted);display:block;font-size:13px;margin-top:2px}
+ol.steps{list-style:none;counter-reset:s;display:grid;gap:14px}
+ol.steps>li{background:#fff;border:1px solid var(--line);border-radius:10px;padding:16px 18px 16px 56px;position:relative}
+ol.steps>li::before{counter-increment:s;content:counter(s);position:absolute;left:14px;top:15px;width:30px;height:30px;
+  background:var(--d);color:var(--y);border-radius:50%;font-family:'Open Sans Condensed',sans-serif;font-weight:700;
+  display:flex;align-items:center;justify-content:center;font-size:17px}
+ol.steps h3{font-size:18px;color:var(--d);margin-bottom:6px;text-transform:none;letter-spacing:0}
+ol.steps ul{margin:8px 0 0 18px}
+ol.steps code{background:#eef0f3;padding:1px 6px;border-radius:4px;font-size:14px}
+.warn{background:#fff8e1;border:1px solid #ffe39a;border-left:4px solid var(--y);border-radius:8px;padding:14px 18px;margin-top:18px}
+.warn b{color:#7a5b00}
+footer{background:var(--d2);color:#aeb6c0;padding:26px 0;font-size:14px;text-align:center}
+@media(max-width:560px){header h1{font-size:30px}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="eyebrow">TEAMPROF · передача в работу</div>
+    <h1>Раздел «Производство» — пакет для внедрения</h1>
+    <p>Готовая страница <code style="color:#ffd54a">/production/</code> для teamprof.ru (WordPress + Elementor + Flatsome).
+       Ниже — превью, файлы пакета и пошаговая инструкция по внедрению.</p>
+    <div class="btns">
+      <a class="btn btn-y" href="../" target="_blank">▶ Открыть превью страницы</a>
+      <a class="btn btn-o" href="teamprof-production-package.zip" download>⬇ Скачать пакет (.zip)</a>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <h2 class="s">Файлы пакета</h2><div class="bar"></div>
+    <ul class="files">
+      <li><a href="teamprof-production-package.zip" download>teamprof-production-package.zip</a>
+        <small>всё одним архивом: шаблон + 3 фото + промо-бокс + инструкция</small></li>
+      <li><a href="production-elementor-template.json" download>production-elementor-template.json</a>
+        <small>Elementor-шаблон страницы (пути к фото уже на teamprof.ru/wp-content/uploads/2026/06/)</small></li>
+      <li><a href="images/stage1.jpg" download>images/stage1.jpg</a> · <a href="images/stage2.jpg" download>stage2.jpg</a> · <a href="images/stage3.jpg" download>stage3.jpg</a>
+        <small>фото этапов — залить в Медиатеку WordPress</small></li>
+      <li><a href="home-block.html" download>home-block.html</a>
+        <small>разметка промо-бокса «Производство» для главной</small></li>
+      <li><a href="%D0%97%D0%90%D0%9F%D0%A3%D0%A1%D0%9A.md" download>ЗАПУСК.md</a>
+        <small>тот же чек-лист, что ниже, — текстом</small></li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2 class="s">Как внедрить</h2><div class="bar"></div>
+    <ol class="steps">
+      <li>
+        <h3>Залить фото в Медиатеку</h3>
+        WordPress → <b>Медиафайлы → Добавить новый</b> → загрузить 3 файла (<code>stage1/2/3.jpg</code>).
+        Ожидаемые URL: <code>teamprof.ru/wp-content/uploads/2026/06/stageN.jpg</code>.
+      </li>
+      <li>
+        <h3>Импорт шаблона и страница /production/</h3>
+        <ul>
+          <li>Elementor → <b>Шаблоны → Импорт</b> → <code>production-elementor-template.json</code>.</li>
+          <li>Создать страницу «Разработка и производство», slug <code>production</code>, шаблон <b>«Во всю ширину»</b>, заголовок скрыт.</li>
+          <li>Вставить импортированный шаблон → <b>Опубликовать</b>.</li>
+        </ul>
+      </li>
+      <li>
+        <h3>SEO</h3>
+        Title: <code>Разработка и производство | TEAMPROF</code>; H1: «Разработка и PROизводство».
+        Description — в файле <code>ЗАПУСК.md</code>.
+      </li>
+      <li>
+        <h3>Промо-бокс на главной</h3>
+        Вставить <code>home-block.html</code> (или копию бокса «О нас») <b>между «О нас» и «Наши клиенты»</b>.
+        Ссылка → <code>/production/</code>, заголовок «СОЗДАЁМ ПРОДУКТ, А НЕ ПЕРЕПРОДАЁМ».
+      </li>
+      <li>
+        <h3>Пункт меню</h3>
+        Внешний вид → Меню → добавить пункт «Производство» (→ <code>/production/</code>), поставить <b>между «О нас» и «Наши клиенты»</b>.
+      </li>
+    </ol>
+
+    <div class="warn">
+      <b>2 момента при заливке:</b>
+      <ul style="margin:8px 0 0 18px">
+        <li><b>URL фото</b> в шаблоне проставлены под папку <code>2026/06</code>. Если месяц/год другой или WP переименовал файл — поправить 3 ссылки (в шаблоне или в Elementor, <code>&lt;img src&gt;</code>).</li>
+        <li><b>Иконка промо-бокса</b> — пока плейсхолдер <code>ик4</code>. Нужна монохромная иконка «производство» 150×150 в стиле ик2/ик3/ик4.</li>
+      </ul>
+    </div>
+
+    <div class="warn" style="background:#fdecec;border-color:#f3b5b5;border-left-color:#d9534f">
+      <b style="color:#a3342f">Важно по формулировкам:</b> модель — контрактное (OEM/ODM) производство под контролем TEAMPROF
+      + собственные сборочные площади в РФ. Недопустимы формулировки о «собственном заводе полного цикла в России».
+      Текст в шаблоне уже выверен — не редактировать без согласования.
+    </div>
+  </div>
+</section>
+
+<footer>TEAMPROF · пакет передан в работу · превью и файлы обновляются вместе со страницей</footer>
+
+</body>
+</html>
